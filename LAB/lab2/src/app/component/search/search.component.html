@@ -1,10 +1,17 @@
-<form (submit)="search()" class="row g-3">
+<form (ngSubmit)="search($event)" class="row g-3">
   <div class="col-auto">
-    <input type="text" [(ngModel)]="value" class="form-control" id="" placeholder="nhập từ khóa">
+    <!-- baiding 2 chiều -->
+    <input type="search" name="message" [(ngModel)]="message" class="form-control" id="" placeholder="nhập từ khóa">
+    <!-- baiding 1 chiều -->
+    <!-- <input type="search" name="message" [value]="message" class="form-control" id="" placeholder="nhập từ khóa"> -->
+    <p class="fs-6 mt-1">Kết quả tìm kiếm: {{message | uppercase}}</p>
+    <p class="fs-6 mt-1">Kết quả tìm kiếm: {{message}}</p>
   </div>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Search</button>
   </div>
 </form>
+
+
 
 

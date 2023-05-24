@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 headerTitle = "string"
+logoLink = "string"
 
 constructor(){
   this.headerTitle = "Employee Management System"
+  this.logoLink = "https://ant.design/"
 }
 }
 

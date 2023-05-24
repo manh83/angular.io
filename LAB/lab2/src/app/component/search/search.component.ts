@@ -5,9 +5,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  value: string = '';
+  message: string = "";
 
-  search(): void {
-    console.log("Search value: ", this.value);
-  } 
+  search(event:any): void {
+    this.message = event.target.message.value
+    console.log("Search value: ", this.message);
+  }
 }
+

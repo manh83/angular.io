@@ -1,0 +1,26 @@
+<h1>Noi dung cua trang home</h1>
+<div class="container">
+  <div class="row" *ngIf="products && products.length > 0; else blockData">
+    <div class="col-3" *ngFor="let product of products">
+      <div class="card" style="width: 15rem">
+        <img
+          src="{{ product.imgUrl }}"
+          class="card-img-top"
+          alt="{{ product.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            {{ product.desc }}
+          </p>
+          <p class="card-text">
+            Price:
+            {{ product.price }}
+          </p>
+          <a routerLink="/product/{{product.id}}" class="btn btn-primary">View detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #blockData>Không tìm thấy sản phầm nào!</ng-template>
+</div>
